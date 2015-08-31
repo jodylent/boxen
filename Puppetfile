@@ -48,7 +48,7 @@ github "homebrew",    "1.11.2"
 github "hub",         "1.4.0"
 github "inifile",     "1.1.1", :repo => "puppetlabs/puppetlabs-inifile"
 github "nginx",       "1.4.4"
-github "nodejs",      "5.0.2"
+github "nodejs",      "4.0.0"
 github "openssl",     "1.0.0"
 github "phantomjs",   "2.3.0"
 github "pkgconfig",   "1.0.0"
@@ -60,19 +60,4 @@ github "xquartz",     "1.2.1"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
-
-github "java"
-github “chrome”
-github “dropbox”
-github “tunnelblick"
-github "firefox"
-# the official python package is hella broken, see
-# https://github.com/boxen/puppet-python/issues/32
-github "python", "3.0.0", :repo => "mloberg/puppet-python”
-github “wget"
-github "osx"
-github “vmware_fusion"
-github “caffeine"
-github "vagrant"
-github "spectacle"
 
