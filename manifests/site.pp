@@ -150,11 +150,9 @@ node default {
   }
 
 
-  #include bash
   include caffeine
   include chrome
   include dropbox
-  include java
   include spectacle
   include tunnelblick
   include vagrant
