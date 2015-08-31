@@ -68,4 +68,4 @@ github "dropbox"
 github "tunnelblick"
 github "vmware_fusion"
 github "caffeine"
-github "MacPass"
+
