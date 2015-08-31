@@ -150,7 +150,7 @@ node default {
   }
 
 
-  include bash
+  #include bash
   include caffeine
   include chrome
   include dropbox

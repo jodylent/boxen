@@ -99,6 +99,11 @@ GITHUBTARBALL
     ruby (8.1.7)
 
 GITHUBTARBALL
+  remote: boxen/puppet-spectacle
+  specs:
+    spectacle (1.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-sudo
   specs:
     sudo (1.0.0)
@@ -161,6 +166,7 @@ DEPENDENCIES
   pkgconfig (= 1.0.0)
   repository (= 2.3.0)
   ruby (= 8.1.7)
+  spectacle (>= 0)
   stdlib (= 4.2.1)
   sudo (= 1.0.0)
   tunnelblick (>= 0)
