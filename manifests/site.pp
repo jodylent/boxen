@@ -93,13 +93,9 @@ node default {
   }
 
   # Creating Jodys Mac env
-  osx::recovery_message { 'If this Mac is found, please call 773-330-5322': }
+  osx::recovery_message { 'jodylent@mgmail.com': }
   include osx::software_update
   include osx::no_network_dsstores
-  include osx::disable_app_quarantine
-  include osx::universal_access::enable_scrollwheel_zoom
-  include osx::universal_access::cursor_size
-  include osx::universal_access::ctrl_mod_zoom
   include osx::global::enable_keyboard_control_access
   include osx::global::tap_to_click
   include osx::global::expand_print_dialog
@@ -175,6 +171,12 @@ node default {
 
   file { "/Users/jlent/projects":
     ensure => "directory",
+  }
+
+  file { '/bin/jsc':
+    ensure => link,
+    target => '/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc',
+    mode => '0777',
   }
 
 }
