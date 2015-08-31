@@ -31,7 +31,7 @@ File {
 
 Package {
   provider => homebrew,
-  require  => Class['homebrew']
+  require  => Class['homebrew'],
 }
 
 Repository {
@@ -80,7 +80,10 @@ node default {
     [
       'ack',
       'findutils',
-      'gnu-tar'
+      'gnu-tar',
+      'go',
+      'bash-completion',
+      'python'
     ]:
   }
 
@@ -88,4 +91,92 @@ node default {
     ensure => link,
     target => $boxen::config::repodir
   }
+
+  # Creating Jodys Mac env
+  osx::recovery_message { 'jodylent@mgmail.com': }
+  include osx::software_update
+  include osx::no_network_dsstores
+  include osx::global::enable_keyboard_control_access
+  include osx::global::tap_to_click
+  include osx::global::expand_print_dialog
+  include osx::global::expand_save_dialog 
+  include osx::finder::empty_trash_securely
+  include osx::finder::enable_quicklook_text_selection
+  include osx::finder::show_all_on_desktop
+  include osx::finder::show_hidden_files
+  include osx::finder::unhide_library
+ 
+  include osx::dock::autohide
+  include osx::dock::clear_dock
+  include osx::dock::dim_hidden_apps
+  include osx::dock::icon_size
+
+  osx::dock::hot_corner { 'Top Left':
+    action => 'Put Display to Sleep'
+  }
+ 
+  include osx::keyboard::capslock_to_control
+
+  boxen::osx_defaults {
+    
+    "Trackpad, Point & Click, Tap to click":
+      host => currentHost,
+      domain => NSGlobalDomain,
+      key => "com.apple.mouse.tapBehavior",
+      type => boolean,
+      value => true;
+
+   "Mouse, Tracking":
+      domain => NSGlobalDomain,
+      key => "com.apple.mouse.scaling",
+      type => float,
+      value => 0.875;
+
+   "Trackpad, Tracking":
+      domain => NSGlobalDomain,
+      key => "com.apple.trackpad.scaling",
+      type => float,
+      value => 0.875;
+   
+   "Datetime format":
+      domain => "com.apple.menuextra.clock",
+      key => DateFormat,
+      type => string,
+      value => "EEE MMM d  H:mm:ss";
+  }
+
+
+  include caffeine
+  include chrome
+  include dropbox
+  include spectacle
+  include tunnelblick
+  include vagrant
+  include vmware_fusion
+
+
+  git::config::global { 
+    'user.email':
+      value  => 'jodylent@gmail.com';
+
+    'user.name': 
+      value => 'Jody Lent';
+
+    'color.ui':
+      value => 'true';
+
+    'push.default':
+      value => 'simple';
+  }
+
+  file { "/Users/jlent/projects":
+    ensure => "directory",
+  }
+
+  file { '/bin/jsc':
+    ensure => link,
+    target => '/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc',
+    mode => '0777',
+  }
+
 }

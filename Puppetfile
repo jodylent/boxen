@@ -61,3 +61,11 @@ github "xquartz",     "1.2.1"
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
 
+github "caffeine"
+github "chrome"
+github "dropbox"
+github "osx"
+github "spectacle"
+github "tunnelblick"
+github "vagrant"
+github "vmware_fusion"
