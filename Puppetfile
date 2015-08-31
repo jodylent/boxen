@@ -62,4 +62,8 @@ github "xquartz",     "1.2.1"
 # https://github.com/boxen.
 
 github "osx"
-
+github "vagrant"
+github "chrome"
+github "dropbox"
+github "tunnelblick"
+github "vmware_fusion"
