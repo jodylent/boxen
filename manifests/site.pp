@@ -93,7 +93,7 @@ node default {
   }
 
   # Creating Jodys Mac env
-  osx::recovery_message { 'jodylent@mgmail.com': }
+  osx::recovery_message { 'jodylent@gmail.com': }
   include osx::software_update
   include osx::no_network_dsstores
   include osx::global::enable_keyboard_control_access
