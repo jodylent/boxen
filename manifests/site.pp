@@ -107,7 +107,7 @@ node default {
 #  include osx::finder::unhide_library
  
   include osx::dock::autohide
-  include osx::dock::clear_dock
+#  include osx::dock::clear_dock
   include osx::dock::dim_hidden_apps
   include osx::dock::icon_size
 
