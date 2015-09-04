@@ -151,7 +151,7 @@ node default {
   include dropbox
   include spectacle
   include tree
-  include tunnelblick
+#  include tunnelblick
   include vagrant
   include vmware_fusion
 
