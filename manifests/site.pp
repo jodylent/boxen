@@ -150,7 +150,7 @@ node default {
   include chrome
   include dropbox
   include spectacle
-  include tree
+#  include tree
 #  include tunnelblick
   include vagrant
   include vmware_fusion
