@@ -146,15 +146,22 @@ node default {
   }
 
 
+#  include awscli
+#  include boto
   include caffeine
   include chrome
   include dropbox
+#  include firefox
+#  include karabiner
+#  include macid
+#  include macpass
+#  include python
   include spectacle
 #  include tree
 #  include tunnelblick
   include vagrant
-  include vmware_fusion
-
+#  include veracrypt
+#  include virtualbox
 
   git::config::global { 
     'user.email':
